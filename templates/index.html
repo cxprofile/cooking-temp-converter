@@ -1,172 +1,218 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cooking Temperature Converter</title>
+
 <style>
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: auto;
-  border: 3px solid green; 
+* {
+  box-sizing: border-box;
 }
 
-.center_result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: auto;
-  margin-top:10px;
-  border: 3px solid pink; 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+  margin: auto;
+  padding: 16px;
+  max-width: auto;
+}
+
+/* Titles */
+h1 {
+  text-align: center;
+  font-size: clamp(22px, 5vw, 32px);
+}
+
+h3 {
+  text-align: center;
+  font-size: clamp(12px, 5vw, 20px);
+}
+
+.footer {
+  text-align: center;
+  font-size: clamp(10px, 2vw, 15px);
 }
 
 .center_title {
   text-align: center;
-  height: 50px;
-  border: none;
-  width:auto;
 }
 
-.center_div {
-  text-align: center;
+/* Form layout */
+.center {
+  display: flex;
+  flex-wrap: wrap; /* KEY FIX */
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid green;
+}
+
+/* Inputs */
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Result */
+.center_result {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  height: 120px;
-  border: none; 
-  width:auto;
-}
-
-.center_div ul {
-  /* Optional: styles for the list itself */
-  list-style-position: inside; /* Keeps bullets aligned with the centered text */
-  padding: 0;                  /* Removes default padding */
-  text-align: center;          /* Centers the text within each list item if needed */
-}
-
-.center_div li {
-  /* Optional: further styling for list items */
-  margin: 10px 0;
-  list-style-type: none;
+  min-height: 80px;
+  margin-top: 10px;
+  border: 2px solid pink;
   text-align: center;
 }
 
+/* CTA Banner */
 .cta-banner {
-    position: fixed;
-    text-align: center;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000;
+  position:sticky;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-button {
+  background: #ff6b35;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 600px) {
+
+  .center {
+    flex-direction: column;
+  }
+
+  input, select, button {
     width: 100%;
-    background: #111;
-    color: #fff;
-    padding: 12px 16px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
   }
 
   .cta-content {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
+    flex-direction: column;
     text-align: center;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+    padding: 2px;
+    line-height: 1;
   }
 
-  .cta-content p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.4;
+  .cta-button {
+    width: 100%;
   }
 
- .cta-button {
-    background: #ff6b35;
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 14px;
-    white-space: nowrap;
-    transition: 0.2s ease;
+  body {
+    padding-bottom: 20px; /* prevent banner overlap */
+  }
+  
+  .container {
+    max-width: auto;
+    margin-top:0px;
+    margin-bottom:0px;
   }
 
-  .cta-button:hover {
-    opacity: 0.85;
+   .container_bottom {
+    max-width: auto;
+    padding-top:0;
+    padding-bottom:0;
+    margin-top:1px;
+    margin-bottom:0px;
   }
 
-  /* Mobile responsive */
-  @media (max-width: 600px) {
-    .cta-content {
-      flex-direction: column;
+  .cta-container {
+    max-width: 600px;
+    min-height:50px;
+    text-align: center;
+  }
+
+  p {
       text-align: center;
-    }
-
-    .cta-button {
-      width: 100%;
-      text-align: center;
-    }
+      height:auto;
+      flex-direction:inherit;
   }
+
+}
 
 </style>
-<title>Cooking Temperature Converter</title>
 </head>
-<body>
-    <div>
-        <h1 class="center_title">🍳 Cooking Temperature Converter</h1>
-        <h3 class="center_title">(Celsius and Farenheit conversion)</h3>
-        <form method="POST">
-            <div class="center">
-            <br>
-            <input type="number" name="temp" placeholder="Enter temperature" required>
-            <select name="conversion">
-                <option value="c_to_f">Celsius → Fahrenheit</option>
-                <option value="f_to_c">Fahrenheit → Celsius</option>
-            </select>
-            <button type="submit">Convert</button>
-            </div>
-            <div class="center_result">
-                {% if result %}
-                <ul class="center_div">
-                   <h2> {{ result }}</h2>
-                   <h3>{{ label }}</h3>
-                </ul>
-                {% endif %}
-            </div> 
-    
-        </form>
-      </div>
-         <div class="center_div">
-            <hr/>
 
-            <h3>Common Cooking Temperatures</h3>
-            <ul>
-                <li>160°C = 320°F (Slow baking)</li>
-                <li>180°C = 350°F (Standard baking)</li>
-                <li>200°C = 400°F (Roasting)</li>
-                <li>220°C = 425°F (High heat)</li>
-            </ul>
-            <br>
-            <h3>This site is done with Python</h3>
-                <p>Interested in learning the basics without a bachelor's degree?</p>    
-                <p>
-                    Join me in learning how to build a site like this:
-                    <a href="https://www.youtube.com/channel/UCXYSBOJF_Z7w1AkwAOVPulA">TheFrugalCoder</a>
-                </p>
-        <hr/>
-        <br/>
-        <div class="cta-banner">
-            <div class="cta-content">
-              <p>
-                Your cutting board could be harboring bacteria—upgrade to a safer choice today.
-                <a href="https://d99f0jz80gl8jx0gjarltixo5m.hop.clickbank.net" target="_blank" class="cta-button">
-                  See Safer Option
-                </a>
-              </p>
-            </div>
-        </div>
+<body>
+
+<div class="container">
+
+<h1>🍳 Cooking Temperature Converter</h1>
+<h3 class="center_title">(Celsius and Fahrenheit conversion)</h3>
+
+<form method="POST">
+
+<div class="center">
+  <input type="number" name="temp" placeholder="Enter temperature" required>
+
+  <select name="conversion">
+    <option value="c_to_f">Celsius → Fahrenheit</option>
+    <option value="f_to_c">Fahrenheit → Celsius</option>
+  </select>
+
+  <button type="submit">Convert</button>
+</div>
+
+<div class="center_result">
+  {% if result %}
+    <div>
+      <h2>{{ result }}</h2>
+      <h3>{{ label }}</h3>
     </div>
-  
+  {% endif %}
+</div>
+
+</form>
+
+</div>
+
+<div class="container_bottom">
+  <hr>
+    <h3>Common Cooking Temperatures</h3>
+    <ul style="text-align:center; list-style:none; padding:0;">
+      <li>160°C = 320°F (Slow baking)</li>
+      <li>180°C = 350°F (Standard baking)</li>
+      <li>200°C = 400°F (Roasting)</li>
+      <li>220°C = 425°F (High heat)</li>
+    </ul>
+    <hr>
+    <p class="footer">This site is done with <strong>Python</strong>. 
+      <a href="https://www.youtube.com/channel/UCXYSBOJF_Z7w1AkwAOVPulA" style="text-align: center;">
+        Learn how to build a site like this
+      </a>
+    </p>
+</div>
+
+<div class="cta-banner">
+  <div class="cta-container">
+    <p>Your cutting board could be harboring bacteria.</p>
+    <p><a href="https://af118ex02ol-dy1iqk2pjpov70.hop.clickbank.net" class="cta-button">See Safer Option</a>
+    </p>
+  </div>
+</div>
 
 </body>
 </html>

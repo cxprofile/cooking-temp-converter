@@ -71,7 +71,6 @@ input, select, button {
 
 /* CTA Banner */
 .cta-banner {
-  position: fixed;
   bottom: 0;
   width: 100%;
   background: #111;
@@ -79,6 +78,7 @@ input, select, button {
   padding: 10px;
   z-index: 1000;
   position:sticky;
+  text-align: center;
 }
 
 .cta-content {
@@ -90,12 +90,6 @@ input, select, button {
   gap: 10px;
 }
 
-.cta-container {
-    max-width: auto;
-    min-height:50px;
-    text-align: center;
-  }
-
 .cta-button {
   background: #ff6b35;
   color: #fff;
@@ -105,8 +99,40 @@ input, select, button {
   font-weight: bold;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 2px;
+  margin:auto;
+  background: #111;
+  color: white;
+  text-size-adjust: inherit;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+
 /* 🔥 MOBILE FIX */
 @media (max-width: 600px) {
+ .menu a {
+    font-size: 12px;
+    margin-left: 10px;
+  }
 
   .center {
     flex-direction: column;
@@ -145,10 +171,12 @@ input, select, button {
     margin-bottom:0px;
   }
 
-  .cta-container {
+  .cta-banner {
     max-width: 600px;
     min-height:50px;
     text-align: center;
+    background-color: black;
+    color:white;
   }
 
   p {
@@ -163,6 +191,14 @@ input, select, button {
 </head>
 
 <body>
+<div class="navbar">
+  <div class="logo">🍳 Temperature Converter</div>
+  <div class="menu">
+    <a href="/">Home</a>
+    <a href="/blogs">Guides</a>
+    <a href="/tools">Tools</a>
+  </div>
+</div>
 
 <div class="container">
 
@@ -213,11 +249,9 @@ input, select, button {
 </div>
 
 <div class="cta-banner">
-  <div class="cta-container">
     <p>Your cutting board could be harboring bacteria.</p>
     <p><a href="https://af118ex02ol-dy1iqk2pjpov70.hop.clickbank.net" class="cta-button">See Safer Option</a>
     </p>
-  </div>
 </div>
 
 </body>

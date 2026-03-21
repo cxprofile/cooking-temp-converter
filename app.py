@@ -16,6 +16,14 @@ def cooking_label(c):
     else:
         return "High heat 🔥🔥"
 
+@app.route("/blogs")
+def blog():
+    return render_template("blogs.html")
+
+@app.route("/tools")
+def tools():
+    return render_template("tools.html")
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None

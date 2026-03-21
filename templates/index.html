@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: auto;
+  border: 3px solid green; 
+}
+
+.center_result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: auto;
+  margin-top:10px;
+  border: 3px solid pink; 
+}
+
+.center_title {
+  text-align: center;
+  height: 50px;
+  border: none;
+  width:auto;
+}
+
+.center_div {
+  text-align: center;
+  align-items: center;
+  height: 120px;
+  border: none; 
+  width:auto;
+}
+
+.center_div ul {
+  /* Optional: styles for the list itself */
+  list-style-position: inside; /* Keeps bullets aligned with the centered text */
+  padding: 0;                  /* Removes default padding */
+  text-align: center;          /* Centers the text within each list item if needed */
+}
+
+.center_div li {
+  /* Optional: further styling for list items */
+  margin: 10px 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+</style>
+<title>Cooking Temperature Converter</title>
+</head>
+<body>
+    <div>
+        <h1 class="center_title">🍳 Cooking Temperature Converter</h1>
+        <h3 class="center_title">(Celsius and Farenheit conversion)</h3>
+        <form method="POST">
+            <div class="center">
+            <br>
+            <input type="number" name="temp" placeholder="Enter temperature" required>
+            <select name="conversion">
+                <option value="c_to_f">Celsius → Fahrenheit</option>
+                <option value="f_to_c">Fahrenheit → Celsius</option>
+            </select>
+            <button type="submit">Convert</button>
+            </div>
+            <div class="center_result">
+                {% if result %}
+                <ul class="center_div">
+                   <h2> {{ result }}</h2>
+                   <h3>{{ label }}</h3>
+                </ul>
+                {% endif %}
+            </div> 
+    
+        </form>
+      </div>
+         <div class="center_div">
+            <hr/>
+
+            <h3>Common Cooking Temperatures</h3>
+            <ul>
+                <li>160°C = 320°F (Slow baking)</li>
+                <li>180°C = 350°F (Standard baking)</li>
+                <li>200°C = 400°F (Roasting)</li>
+                <li>220°C = 425°F (High heat)</li>
+            </ul>
+            <br>
+            <h3>This site is done with Python</h3>
+                <p>Interested in learning the basics without a bachelor's degree?</p>    
+                <p>
+                    Join me in learning how to build a site like this:
+                    <a href="https://www.youtube.com/channel/UCXYSBOJF_Z7w1AkwAOVPulA">TheFrugalCoder</a>
+                </p>
+        <hr/>
+    </div>
+  
+</body>
+</html>

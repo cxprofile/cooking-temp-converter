@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+    <style>
+        .center_content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80px;
+            margin-top: 10px;
+            /*border: 2px solid pink;*/
+            text-align: center;
+        }
+        
+        .cta-button {
+            background: #ff6b35;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background: #111;
+            color: white;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            bottom: 0;
+            width: 100%;
+            background: #111;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+            position:sticky;
+            text-align: center;
+        }
+
+        /* 🔥 MOBILE FIX */
+        @media (max-width: 600px) {
+        .menu a {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .center {
+            flex-direction: column;
+        }
+
+        input, select, button {
+            width: 100%;
+        }
+
+        .cta-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 2px;
+            line-height: 1;
+        }
+
+        .cta-button {
+            width: 100%;
+        }
+
+        body {
+            padding-bottom: 20px; /* prevent banner overlap */
+        }
+        
+        .container {
+            max-width: auto;
+            margin-top:0px;
+            margin-bottom:0px;
+        }
+
+        .cta-banner {
+            max-width: 600px;
+            min-height:50px;
+            text-align: center;
+            background-color: black;
+            color:white;
+        }
+
+        p {
+            text-align: center;
+            height:auto;
+            flex-direction:inherit;
+        }
+
+        }
+    </style>
+
+</head>
+<body class="container">
+    <div class="navbar">
+    <div class="logo">🍳 Temperature Converter</div>
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/blogs">Guides</a>
+        <a href="/tools">Tools</a>
+    </div>
+    </div>
+
+    <a href="/blogs">← Back to Blog</a>
+
+    <div class="center_content">
+        <div style="text-align: left;">
+            {{ article.content | safe }}
+        </div>
+    </div>
+
+    
+    <div class="cta-banner">
+      <p>Your cutting board could be harboring bacteria.</p>
+      <p><a href="https://af118ex02ol-dy1iqk2pjpov70.hop.clickbank.net" class="cta-button">See Safer Option</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

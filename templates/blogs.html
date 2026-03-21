@@ -169,10 +169,20 @@ h3 {
 
    <h1>Frugal Coding Guides</h1>
   <div class="center_content">
+
     <ul style="text-align:center; list-style:none; padding:0;">
-    <li><a href="#">How I Built a Web App for $0</a></li>
-    <li><a href="#">Top Cheap Hosting Platforms</a></li>
+      {% for article in articles %}
+        <li>
+          <a href="/blogs/{{ article.slug }}">
+            {{ article.title }}
+          </a>
+        </li>
+      {% endfor %}
     </ul>
+    
+
+
+
     </div>
 
     <div class="cta-banner">

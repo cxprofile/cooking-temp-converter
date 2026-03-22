@@ -3,32 +3,229 @@
 <head>
     <title>180°C to Fahrenheit (Oven Guide)</title>
     <meta name="description" content="Convert 180°C to Fahrenheit. Learn what 180°C means for baking cakes, cookies, and more.">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+  margin: auto;
+  padding: 10px;
+  max-width: auto;
+}
+
+/* Titles */
+h1 {
+  text-align: center;
+  font-size: clamp(22px, 5vw, 32px);
+}
+
+h2 {
+  text-align: center;
+  padding:0;
+  margin:0;
+  font-size: clamp(20px, 2vw, 20px);
+}
+
+.footer {
+  text-align: center;
+  font-size: clamp(10px, 2vw, 15px);
+}
+
+.center_title {
+  text-align: center;
+}
+
+/* Form layout */
+.center {
+  display: flex;
+  flex-wrap: wrap; /* KEY FIX */
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid green;
+}
+
+/* Inputs */
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Result */
+.center_result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
+/* CTA Banner */
+.cta-banner {
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000;
+  position:sticky;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-button {
+  background: #ff6b35;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 2px;
+  margin:auto;
+  background: #111;
+  color: white;
+  text-size-adjust: inherit;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+    /* 🔥 MOBILE FIX */
+    @media (max-width: 600px) {
+    .menu a {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    .center {
+        flex-direction: column;
+    }
+
+    input, select, button {
+        width: 100%;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2px;
+        line-height: 1;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    body {
+        padding-bottom: 20px; /* prevent banner overlap */
+    }
+    
+    .container {
+        max-width: auto;
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+
+    .container_bottom {
+        max-width: auto;
+        padding-top:0;
+        padding-bottom:0;
+        margin-top:1px;
+        margin-bottom:0px;
+    }
+
+    .cta-banner {
+        max-width: 600px;
+        min-height:50px;
+        text-align: center;
+        background-color: black;
+        color:white;
+    }
+
+    p {
+        text-align: center;
+        height:auto;
+        flex-direction:inherit;
+    }
+
+    }
+</style>
 </head>
 
 <body>
-<p><a href="/">← Back to converter</a></p>
-<h1>180°C to Fahrenheit (Oven Temperature Guide)</h1>
+    <div class="navbar">
+        <div class="logo">🍳 Temperature Converter</div>
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/blogs">Guides</a>
+            <a href="/tools">Tools</a>
+        </div>
+    </div>
+    <p><a href="/">← Back to converter</a></p>
 
-<p><strong>180°C = 350°F</strong></p>
+    <div class="container">
+        <h1>180°C to Fahrenheit (Oven Temperature Guide)</h1>
+        <p style="text-align: center;font-size: 20px;color: red;"><strong>180°C = 350°F</strong></p>
+        <p style="text-align: center;">
+           180°C is considered a <strong>moderate oven temperature</strong> and is one of the most common settings in baking.
+        </p>
+    </div>
+    <h2 style="text-align: center;">What is 180°C used for?</h2>
+    <div class="center_result">
+        <ul>
+            <li>Cakes 🍰</li>
+            <li>Cookies 🍪</li>
+            <li>Muffins</li>
+            <li>Roasting vegetables 🥕</li>
+        </ul>
+    </div>
+    <div class="container_bottom">
+    <h2 style="text-align: center;">Tip for better cooking: </h2>
+    <p style="text-align: center;">Use a reliable thermometer to ensure your oven is accurate.</p>
+    <p style="text-align: center;"><a href="https://f6630a7vsml-mvfwgtdvfu0x6h.hop.clickbank.net">Check out this 500 dessert recipe cookbok</a></p>
 
-<p>
-180°C is considered a <strong>moderate oven temperature</strong> and is one of the most common settings in baking.
-</p>
-
-<h2>What is 180°C used for?</h2>
-<ul>
-    <li>Cakes 🍰</li>
-    <li>Cookies 🍪</li>
-    <li>Muffins</li>
-    <li>Roasting vegetables 🥕</li>
-</ul>
+</div>
 
 
-<h2>Tip for better cooking: </h2>
-<p>Use a reliable thermometer to ensure your oven is accurate.</p>
-
-<p><a href="https://f6630a7vsml-mvfwgtdvfu0x6h.hop.clickbank.net">Check out this 500 dessert recipe cookbok</a></p>
-
+<div class="cta-banner">
+    <p>Your cutting board could be harboring bacteria.</p>
+    <p><a href="https://af118ex02ol-dy1iqk2pjpov70.hop.clickbank.net" class="cta-button">See Safer Option</a>
+    </p>
+</div>
 
 </body>
 </html>

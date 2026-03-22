@@ -16,6 +16,23 @@ def cooking_label(c):
     else:
         return "High heat 🔥🔥"
 
+@app.route("/180c-to-fahrenheit")
+def page_180():
+    return render_template("180c.html")
+
+@app.route("/<temp>")
+def dynamic_temp(temp):
+    if temp == "180c-to-fahrenheit":
+        value = "180°C = 350°F"
+        use = "Perfect for cakes, cookies, and baking."
+    elif temp == "200c-to-fahrenheit":
+        value = "200°C = 392°F"
+        use = "Great for roasting and crispy dishes."
+    else:
+        return "Not found", 404
+
+    return render_template("temp_page.html", value=value, use=use)
+
 @app.route("/blogs")
 def blog():
  articles = [

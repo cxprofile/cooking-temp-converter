@@ -58,19 +58,19 @@ def article(slug):
             <p>If you're building small tools or side projects, you don’t need expensive hosting.</p>
 
             <h2>1. Render</h2>
-                <p style="padding-left:10px">Great for beginners building full-stack apps.</p>
+                <p style="padding-left:10px;text-align:left">Great for beginners building full-stack apps.</p>
 
             <h2>2. Netlify</h2>
-                <p style="padding-left:10px">Perfect for blogs and static sites.</p>
+                <p style="padding-left:10px;text-align:left">Perfect for blogs and static sites.</p>
 
             <h2>3. Cloudflare Pages</h2>
-                <p style="padding-left:10px">Best free hosting with unlimited bandwidth.</p>
+                <p style="padding-left:10px;text-align:left">Best free hosting with unlimited bandwidth.</p>
 
             <h2>4. Railway</h2>
-                <p style="padding-left:10px">Fast prototyping and deployment.</p>
+                <p style="padding-left:10px;text-align:left">Fast prototyping and deployment.</p>
 
             <h2>5. Vercel</h2>
-                <p style="padding-left:10px">Best for frontend developers.</p>
+                <p style="padding-left:10px;text-align:left">Best for frontend developers.</p>
         """
     },
     "free-hosting-pros-cons":{
@@ -78,48 +78,48 @@ def article(slug):
         "content": """
             <h1>Pros and Cons of Free Hosting for Beginners (2026 Guide)</h1>
             <h2>Pros:</h2>
-            <ul>
+            <ul style="text-align:left">
                 <li>Zero Cost
-                    <p>	You don’t pay anything to get started </p>
-                    <p> Perfect for beginners, students, and side projects</p>
+                    <p style="text-align:left">You don’t pay anything to get started </p>
+                    <p style="text-align:left">Perfect for beginners, students, and side projects</p>
                 </li>
                 <li>Easy Setup. Most platforms offer:
-                    <p>	One-click deploy </p>
-                    <p> Githb integration</p>
-                    <p> Simple Dashboards </p>
+                    <p style="text-align:left">One-click deploy </p>
+                    <p style="text-align:left">Githb integration</p>
+                    <p style="text-align:left">Simple Dashboards </p>
                 </li>
                 <li>Great for learning and testing
-                    <p>	Practice coding and test ideas</p>
-                    <p> Building portfolio </p>
+                    <p style="text-align:left">Practice coding and test ideas</p>
+                    <p style="text-align:left">Building portfolio </p>
                 </li>
                 <li>No Commitment
-                    <p>	No contracts and you can stop at anytime</p>
+                    <p style="text-align:left">No contracts and you can stop at anytime</p>
                 </li>
                 <li>Basic Tools included like:
-                    <p>	SSL</p>
-                    <p> Website Builder </p>
-                    <p> Git Integration </p>
+                    <p style="text-align:left">SSL</p>
+                    <p style="text-align:left">Website Builder </p>
+                    <p style="text-align:left">Git Integration </p>
                 </li>
             </ul>
             <h2>Cons:</h2>
             <ul>
                 <li>Slow Performance
-                    <p>	Servers are shared with many users </p>
-                    <p> Can be slow and laggy</p>
+                    <p style="text-align:left">Servers are shared with many users 
+                    <p style="text-align:left">Can be slow and laggy</p>
                 </li>
                 <li>Sites might go offline
-                    <p>	"Sleep after inactivity" </p>
+                    <p style="text-align:left">Sleep after inactivity" </p>
                 </li>
                 <li>Limited Resource
-                    <p>	Storage Limits can be strict </p>
-                    <p> Bandwidth and CPU can be limited </p>
+                    <p style="text-align:left">Storage Limits can be strict </p>
+                    <p style="text-align:left">Bandwidth and CPU can be limited </p>
                 </li>
                 <li> Weak security and support
-                    <p> Limited security features </p>
-                    <p> No customer support </p>
+                    <p style="text-align:left">Limited security features </p>
+                    <p style="text-align:left">No customer support </p>
                 </li>
                 <li> Hidden Upsells
-                    <p> You'll be pushed to upgrade </p>
+                    <p style="text-align:left">You'll be pushed to upgrade </p>
                 </li>
 
             </ul>

@@ -186,6 +186,7 @@ h3 {
   </div>
 
    <h1>Contact Us</h1>
+   <h3>Alternatively, send us an email at admin@conversiontoolshub.com</h3>
    <div class="center_content">
       <form action="/send-message" method="POST">
         <p><label>Name</label>
@@ -197,8 +198,8 @@ h3 {
         <p>
         <label>Message</label>
         <textarea name="message" rows="5" required></textarea>
-</p>
-        <button type="submit">Send Message</button>
+        </p>
+        <p><button type="submit">Send Message</button></p>        
         {% if label %}
             <p>{{ label }}</p>
         {% endif %}

@@ -190,6 +190,8 @@ def contact():
 
 @app.route("/send-message", methods=["POST"])
 def send_message():
+    label=""
+    label2=""
     try:
         name = request.form['name']
         email = request.form['email']
@@ -205,15 +207,17 @@ def send_message():
         # Send email via SMTP
         with smtplib.SMTP('smtp.gmail.com', 587) as server:
             server.starttls()
-            server.login('admin@conversiontoolshub.com', 'nmft rlds kfhz ohcy')
+            server.login('conversiontoolhub', 'nyct eeyt ynvm ixzu')
             server.send_message(msg)
-
-        flash("Your message was sent successfully!", "success")
+        label="email sent."
+        #flash("Your message was sent successfully!", "success")
     except Exception as e:
         print(e)
-        flash("There was an error sending your message. Please try again.", "error")
+        label="There was an error sending your message. Please try again later."
+        label2=e
+        #flash("There was an error sending your message. Please try again.", "error")
 
-    return redirect(url_for("contact"))
+    return render_template("contact.html", label=label, label2=label2)
 
 @app.route("/cooking-measurement-tips")
 def cooking_measurement_tips():

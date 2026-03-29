@@ -187,7 +187,9 @@ def tools():
 # New contact page route
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    load_dotenv()
+    runenv = os.getenv("WHEREAMI")
+    return render_template("contact.html", runenv=runenv)
 
 @app.route("/send-message", methods=["POST"])
 def send_message():
@@ -201,6 +203,7 @@ def send_message():
         load_dotenv()
         email_user = os.getenv("EMAIL_USER")
         email_pwd = os.getenv("EMAIL_PWD")
+        smtp_host = os.getenv("SMTP_HOST")
         #print(email_user)
         #print(email_pwd)
 
@@ -211,12 +214,12 @@ def send_message():
         msg.set_content(f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}")
 
         # Send email via SMTP
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.ehlo()
-            smtp.starttls()
-            smtp.ehlo()
-            smtp.login(email_user, email_pwd) #nycteeytynvmixzu
-            smtp.send_message(msg)
+        with smtplib.SMTP(smtp_host, 587) as server:
+            server.ehlo()
+            server.starttls()
+            server.ehlo()
+            server.login(email_user, email_pwd) #nycteeytynvmixzu
+            server.send_message(msg)
         label="email sent."
         #flash("Your message was sent successfully!", "success")
     except Exception as e:

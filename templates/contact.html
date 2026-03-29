@@ -186,9 +186,17 @@ h3 {
   </div>
 
    <h1>Contact Us</h1>
-   <h3>Alternatively, send us an email at admin@conversiontoolshub.com</h3>
+   <h3>Send us an email at admin@conversiontoolshub.com</h3>
    <div class="center_content">
-      <form action="/send-message" method="POST">
+    <div class="justify_left">
+      <p>We aim to respond between 24 - 48 hours.</p>
+      <p>For business partnerships, please include details about your request.</p>
+    </div>
+   </div>
+      <div class="center_content">
+      {% if runenv == "local" %} 
+          {{ runenv }}
+        <form action="/send-message" method="POST">
         <p><label>Name</label>
         <input type="text" name="name" required>
         </p>
@@ -204,6 +212,7 @@ h3 {
             <p>{{ label }}</p>
         {% endif %}
     </form> 
+    {% endif %}
   </div>
     <hr>
     <div class="container_bottom1">

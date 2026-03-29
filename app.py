@@ -164,6 +164,17 @@ def article(slug):
 
     return render_template("article.html", article=article)
 
+
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy-policy.html")
+
+
+@app.route("/terms")
+def terms():
+    return render_template("terms.html")
+
+
 @app.route("/tools")
 def tools():
     return render_template("tools.html")

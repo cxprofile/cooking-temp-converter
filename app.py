@@ -199,8 +199,8 @@ def send_message():
 
         # Create the email
         load_dotenv()
-        email_user = os.environ.get("EMAIL_USER")
-        email_pwd = os.environ.get("EMAIL_PWD")
+        email_user = os.getenv("EMAIL_USER")
+        email_pwd = os.getenv("EMAIL_PWD")
         #print(email_user)
         #print(email_pwd)
 

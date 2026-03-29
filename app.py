@@ -164,10 +164,21 @@ def article(slug):
 
     return render_template("article.html", article=article)
 
-
 @app.route("/tools")
 def tools():
     return render_template("tools.html")
+
+@app.route("/cooking-measurement-tips")
+def cooking_measurement_tips():
+    return render_template("cooking-measurement-tips.html")
+
+@app.route("/grams-vs-cups")
+def grams_vs_cups():
+    return render_template("grams-vs-cups.html")
+
+@app.route("/grams-vs-ounce")
+def gramsvsoz():
+    return render_template("grams-vs-ounce.html")
 
 @app.route("/grams-to-ounce", methods=["GET", "POST"])
 def weightConverter():

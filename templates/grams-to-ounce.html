@@ -43,6 +43,13 @@ h3 {
   padding:0px;
 }
 
+h4 {
+  text-align: center;
+  padding-top:10px;
+  margin:0;
+  font-size: clamp(18px, 2vw, 18px);
+}
+
 /* Form layout */
 .center1 {
   display: flex;
@@ -84,8 +91,10 @@ input, select, button {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70px;
+  min-height: 30px;
   text-align: center;
+  margin-top:0px;
+  margin-bottom:0px;
 }
 
 /* CTA Banner */
@@ -208,32 +217,32 @@ input, select, button {
 </head>
 
 <body>
-    <div class="navbar">
+  <div class="navbar">
         <div class="logo">Conversion Tools Hub 🍳Volume and Weight Converters</div>
         <div class="menu">
             <a href="/">Home</a>
             <a href="/blogs">Guides</a>
             <a href="/tools">Tools</a>
         </div>
-    </div>
+  </div>
 
-    <div class="container1">
+  <div class="container1">
     <p><a href="/">← Back to temperature converter</a></p>
     <h1>🍳 Volume and Weight Converter</h1>
     <h3 class="center_title">(Grams, Kg, Oz, lbs, Cups and mL conversion)</h3>
 
     <div class="center">
       <form method="POST">
-      <input type="number" step="0.000001" name="temp" placeholder="Enter Weight or Volume" required>
-      <select name="conversion">
-        <option value="g_to_oz">Grams → ounce</option>
-        <option value="oz_to_g">Ounce → Grams</option>
-        <option value="cups_to_ml">Cups → mL</option>
-        <option value="ml_to_cups">mL → Cups</option>
-        <option value="g_to_lbs">Grams → Pounds</option>
-        <option value="lbs_to_g">Pounds → Grams</option>
-      </select>
-    <button type="submit">Convert</button>
+        <input type="number" step="0.000001" name="temp" placeholder="Enter Weight or Volume" required>
+        <select name="conversion">
+          <option value="g_to_oz">Grams → ounce</option>
+          <option value="oz_to_g">Ounce → Grams</option>
+          <option value="cups_to_ml">Cups → mL</option>
+          <option value="ml_to_cups">mL → Cups</option>
+          <option value="g_to_lbs">Grams → Pounds</option>
+          <option value="lbs_to_g">Pounds → Grams</option>
+        </select>
+        <button type="submit">Convert</button>
       </form>
     </div>
     <div class="center_result">
@@ -243,9 +252,17 @@ input, select, button {
           </div>
         {% endif %}
     </div>
-      <h3><a href="/cooking-conversion-tools">Cooking Unit Converters (g, kg, lbs)</a></h3>     <div class="center_result1">
-      <h3>Other Conversion Tools (<a href="/">Temperature</a>, <a href="/tools">Business)</a></h3>
+    <h4><a href="/cooking-measurement-tips">Learn more about cooking measurements</a></h4>
+    <div class="center_result1">
+      <ul style="text-align: left;padding-top:0px;margin-top:8px;">
+        <li style="padding-bottom:5px"><a href="/grams-vs-ounce">When to use grams vs ounces</a></li>
+        <li  style="padding-bottom:5px"><a href="/cooking-measurement-tips">Why Accurate Measurements Matter</a></li>
+        <li  style="padding-bottom:0px"><a href="/grams-vs-cups">Grams vs Cups Explained</a></li>
+      </ul>
     </div>
+    <h3 style="margin-bottom: 0px;padding-bottom: 0px;"><a href="/cooking-conversion-tools">Cooking Unit Converters (g, kg, lbs)</a></h3>     <div class="center_result1">
+    <h3 style="margin-top:0px;padding-top:0px">Other Conversion Tools (<a href="/">Temperature</a>, <a href="/tools">Business)</a></h3>
+  </div>
 
     <div class="container_bottom1">
     <h2 style="text-align: center;">Tip for better cooking: </h2>

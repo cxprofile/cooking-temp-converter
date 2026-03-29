@@ -213,7 +213,7 @@ def send_message():
         label="email sent."
         #flash("Your message was sent successfully!", "success")
     except Exception as e:
-        print(e)
+        #print(e)
         label="There was an error sending your message. Please try again later."
         #flash("There was an error sending your message. Please try again.", "error")
 

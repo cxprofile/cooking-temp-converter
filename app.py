@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import smtplib
 from email.message import EmailMessage
-
+import os 
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.secret_key = "secretwapprender"  # required for flash messages
@@ -197,9 +198,15 @@ def send_message():
         message = request.form['message']
 
         # Create the email
+        load_dotenv()
+        email_user = os.environ.get("EMAIL_USER")
+        email_pwd = os.environ.get("EMAIL_PWD")
+        #print(email_user)
+        #print(email_pwd)
+
         msg = EmailMessage()
         msg['Subject'] = f'New message from {name}'
-        msg['From'] = 'maesanticb@gmail.com'
+        msg['From'] = email_user
         msg['To'] = 'admin@conversiontoolshub.com'
         msg.set_content(f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}")
 
@@ -208,12 +215,14 @@ def send_message():
             smtp.ehlo()
             smtp.starttls()
             smtp.ehlo()
-            smtp.login('maesanticb@gmail.com', 'nycteeytynvmixzu')
+            smtp.login(email_user, email_pwd) #nycteeytynvmixzu
             smtp.send_message(msg)
         label="email sent."
         #flash("Your message was sent successfully!", "success")
     except Exception as e:
         #print(e)
+        #print(email_user)
+        #print(email_pwd)
         label="There was an error sending your message. Please try again later."
         #flash("There was an error sending your message. Please try again.", "error")
 

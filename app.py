@@ -205,7 +205,7 @@ def send_message():
         # Send email via SMTP
         with smtplib.SMTP('smtp.gmail.com', 587) as server:
             server.starttls()
-            server.login('admin@conversiontoolshub.com', 'EMAIL_PASSWORD')
+            server.login('admin@conversiontoolshub.com', 'ukqe vkha ccym pplk')
             server.send_message(msg)
 
         flash("Your message was sent successfully!", "success")

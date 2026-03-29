@@ -1,6 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
+import smtplib
+from email.message import EmailMessage
+
 
 app = Flask(__name__)
+app.secret_key = "secretwapprender"  # required for flash messages
+
 
 def c_to_f(c):
     return (c * 9/5) + 32
@@ -171,13 +176,44 @@ def privacy():
 
 
 @app.route("/terms")
-def terms():
+def terms_of_service():
     return render_template("terms.html")
-
 
 @app.route("/tools")
 def tools():
     return render_template("tools.html")
+
+# New contact page route
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/send-message", methods=["POST"])
+def send_message():
+    try:
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+
+        # Create the email
+        msg = EmailMessage()
+        msg['Subject'] = f'New message from {name}'
+        msg['From'] = 'no-reply@conversiontoolshub.com'
+        msg['To'] = 'admin@conversiontoolshub.com'
+        msg.set_content(f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}")
+
+        # Send email via SMTP
+        with smtplib.SMTP('smtp.gmail.com', 587) as server:
+            server.starttls()
+            server.login('admin@conversiontoolshub.com', 'EMAIL_PASSWORD')
+            server.send_message(msg)
+
+        flash("Your message was sent successfully!", "success")
+    except Exception as e:
+        print(e)
+        flash("There was an error sending your message. Please try again.", "error")
+
+    return redirect(url_for("contact"))
 
 @app.route("/cooking-measurement-tips")
 def cooking_measurement_tips():

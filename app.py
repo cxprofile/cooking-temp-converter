@@ -199,7 +199,7 @@ def send_message():
         # Create the email
         msg = EmailMessage()
         msg['Subject'] = f'New message from {name}'
-        msg['From'] = 'no-reply@conversiontoolshub.com'
+        msg['From'] = 'maesanticb@gmail.com'
         msg['To'] = 'admin@conversiontoolshub.com'
         msg.set_content(f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}")
 
@@ -208,7 +208,7 @@ def send_message():
             smtp.ehlo()
             smtp.starttls()
             smtp.ehlo()
-            smtp.login('conversiontoolhub', 'nycteeytynvmixzu')
+            smtp.login('maesanticb@gmail.com', 'nycteeytynvmixzu')
             smtp.send_message(msg)
         label="email sent."
         #flash("Your message was sent successfully!", "success")

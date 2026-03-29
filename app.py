@@ -4,10 +4,6 @@ from email.message import EmailMessage
 import os 
 from dotenv import load_dotenv
 
-load_dotenv()
-email_user = os.environ.get("EMAIL_USER")
-email_pwd = os.environ.get("EMAIL_PWD")
-
 app = Flask(__name__)
 app.secret_key = "secretwapprender"  # required for flash messages
 
@@ -202,6 +198,7 @@ def send_message():
         message = request.form['message']
 
         # Create the email
+        load_dotenv()
         email_user = os.environ.get("EMAIL_USER")
         email_pwd = os.environ.get("EMAIL_PWD")
         #print(email_user)

@@ -8,6 +8,36 @@ def c_to_f(c):
 def f_to_c(f):
     return (f - 32) * 5/9
 
+def g_to_kg(f):
+    return (f/1000)
+
+def kg_to_g(f):
+    return (f*1000)
+
+def g_to_lbs(f):
+    return (f/1453.6)
+
+def lbs_to_g(f):
+    return (f*1453.6)
+
+def kg_to_lbs(f):
+    return (f*2.205)
+
+def lbs_to_kg(f):
+    return (f/2.205)
+
+def g_to_oz(f):
+    return (f/28.35)
+
+def oz_to_g(f):
+    return (f*28.35)
+
+def cups_to_ml(f):
+    return (f/236.6)
+
+def ml_to_cups(f):
+    return (f*236.6)
+
 def cooking_label(c):
     if c < 150:
         return "Low heat 🔥"
@@ -139,6 +169,68 @@ def article(slug):
 def tools():
     return render_template("tools.html")
 
+@app.route("/grams-to-ounce", methods=["GET", "POST"])
+def weightConverter():
+    result = None
+    if request.method == "POST":
+        temp = float(request.form["temp"])
+        conversion = request.form["conversion"]
+
+        if conversion == "g_to_oz":
+            converted = g_to_oz(temp)
+            result = f"{temp} g = {converted:.6f} oz"
+        elif conversion == "oz_to_g":
+            converted = oz_to_g(temp)
+            result = f"{temp} oz = {converted:.6f} g"
+        elif conversion == "g_to_lbs":
+            converted = g_to_lbs(temp)
+            result = f"{temp} g = {converted:.6f} lbs"
+        elif conversion == "lbs_to_g":
+            converted = lbs_to_g(temp)
+            result = f"{temp} lbs = {converted:.6f} g"
+        elif conversion == "cups_to_ml":
+            converted = cups_to_ml(temp)
+            result = f"{temp} cups = {converted:.6f} ml"
+        elif conversion == "ml_to_cups": 
+            converted = ml_to_cups(temp)
+            result = f"{temp} ml = {converted:.6f} cups"
+        else:
+            pass
+
+    return render_template("grams-to-ounce.html", result=result)
+
+@app.route("/cooking-conversion-tools", methods=["GET", "POST"])
+def cookingConverter():
+    #return render_template("cooking-converters.html")
+    result = None
+    if request.method == "POST":
+        temp = float(request.form["temp"])
+        conversion = request.form["conversion"]
+
+        if conversion == "g_to_kg":
+            converted = g_to_kg(temp)
+            result = f"{temp} g = {converted:.5f} Kg"
+        elif conversion == "kg_to_g":
+            converted = kg_to_g(temp)
+            result = f"{temp} Kg = {converted:.5f} g"
+        elif conversion == "g_to_lbs":
+            converted = g_to_lbs(temp)
+            result = f"{temp} g = {converted:.5f} lbs"
+        elif conversion == "lbs_to_g":
+            converted = lbs_to_g(temp)
+            result = f"{temp} lbs = {converted:.5f} g"
+        elif conversion == "lbs_to_kg":
+            converted = lbs_to_kg(temp)
+            result = f"{temp} lbs = {converted:.5f} Kg"
+        elif conversion == "kg_to_lbs": 
+            converted = kg_to_lbs(temp)
+            result = f"{temp} Kg = {converted:.5f} lbs"
+        else:
+            pass
+
+    return render_template("cooking-converters.html", result=result)
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
@@ -156,7 +248,7 @@ def index():
             converted = f_to_c(temp)
             result = f"{temp}°F = {converted:.2f}°C"
             label = cooking_label(converted)
-
+    
     return render_template("index.html", result=result, label=label)
 
 if __name__ == "__main__":

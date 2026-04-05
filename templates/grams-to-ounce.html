@@ -6,29 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7887965262748356"
      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Container */
-.container1 {
-  margin: auto;
-  padding: 10px;
-  max-width: auto;
-}
-
-/* Titles */
-h1 {
-  text-align: center;
-  font-size: clamp(25px, 5vw, 25px);
-}
-
 h2 {
   text-align: center;
   padding-top:10px;
@@ -51,170 +30,6 @@ h4 {
   margin:0;
   font-size: clamp(18px, 2vw, 18px);
 }
-
-/* Form layout */
-.center1 {
-  display: flex;
-  flex-wrap: wrap; /* KEY FIX */
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-}
-
-/* Inputs */
-input, select, button {
-  padding: 10px;
-  font-size: 16px;
-}
-
-/* Form layout */
-.center {
-  display: flex;
-  flex-wrap: wrap; /* KEY FIX */
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  border: 2px solid green;
-}
-
-/* Result */
-.center_result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-align: center;
-  border: 2px solid pink;
-}
-
-.center_result1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 30px;
-  text-align: center;
-  margin-top:0px;
-  margin-bottom:0px;
-}
-
-/* CTA Banner */
-.cta-banner1 {
-  bottom: 0;
-  width: 100%;
-  background: #111;
-  color: #fff;
-  padding: 10px;
-  z-index: 1000;
-  position:sticky;
-  text-align: center;
-}
-
-.cta-content1 {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.cta-button1 {
-  background: #ff6b35;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2px 2px;
-  margin:auto;
-  background: #111;
-  color: white;
-  text-size-adjust: inherit;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 10px;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-  font-size: 14px;
-}
-
-.menu a:hover {
-  text-decoration: underline;
-}
-
-    /* 🔥 MOBILE FIX */
-@media (max-width: 600px) {
-    .menu a {
-        font-size: 12px;
-        margin-left: 10px;
-    }
-
-    .center1 {
-        flex-direction: column;
-    }
-
-    input, select, button {
-        width: 100%;
-    }
-
-    .cta-content1 {
-        flex-direction: column;
-        text-align: center;
-        padding: 2px;
-        line-height: 1;
-    }
-
-    .cta-button1 {
-        width: 100%;
-    }
-
-    body {
-        padding-bottom: 20px; /* prevent banner overlap */
-    }
-    
-    .container1 {
-        max-width: auto;
-        margin-top:0px;
-        margin-bottom:0px;
-    }
-
-    .container_bottom1 {
-        max-width: auto;
-        padding-top:0;
-        padding-bottom:0;
-        margin-top:1px;
-        margin-bottom:0px;
-    }
-
-    .cta-banner1 {
-        max-width: 600px;
-        min-height:50px;
-        text-align: center;
-        background-color: black;
-        color:white;
-    }
-
-    p {
-        text-align: center;
-        height:auto;
-        flex-direction:inherit;
-    }
-
-    }
 </style>
 </head>
 
@@ -228,7 +43,7 @@ input, select, button {
         </div>
   </div>
 
-  <div class="container1">
+  <div class="container">
     <p><a href="/">← Back to temperature converter</a></p>
     <h1>🍳 Volume and Weight Converter</h1>
     <h3 class="center_title">(Grams, Kg, Oz, lbs, Cups and mL conversion)</h3>
@@ -255,8 +70,8 @@ input, select, button {
         {% endif %}
     </div>
     <h4><a href="/cooking-measurement-tips">Learn more about cooking measurements</a></h4>
-    <div class="center_result1">
-      <ul style="text-align: left;padding-top:0px;margin-top:8px;">
+    <div class="center_result">
+      <ul style="text-align:left;padding-top:0px;margin-top:8px;">
         <li style="padding-bottom:5px"><a href="/grams-vs-ounce">When to use grams vs ounces</a></li>
         <li  style="padding-bottom:5px"><a href="/cooking-measurement-tips">Why Accurate Measurements Matter</a></li>
         <li  style="padding-bottom:0px"><a href="/grams-vs-cups">Grams vs Cups Explained</a></li>
@@ -266,20 +81,17 @@ input, select, button {
     <h3 style="margin-top:0px;padding-top:0px">Other Conversion Tools (<a href="/">Temperature</a>, <a href="/tools">Business)</a></h3>
   </div>
 
-    <div class="container_bottom1">
+    <div class="container_bottom">
     <h2 style="text-align: center;">Tip for better cooking: </h2>
     <p style="text-align: center;">Use a reliable thermometer to ensure your oven is accurate.</p>
-    <p style="text-align: center;"><a href="https://f6630a7vsml-mvfwgtdvfu0x6h.hop.clickbank.net">Check out this 500 Dessert Recipe Cookbook</a></p>
+    <p style="text-align: center;"><a href="https://f6630a7vsml-mvfwgtdvfu0x6h.hop.clickbank.net" target="_blank" rel="nofollow sponsored">Check out this 500 Dessert Recipe Cookbook</a></p>
 
 </div>
 
 </div>
-<div class="cta-banner1">
-    <p>Your cutting board could be harboring bacteria.</p>
-    <p><a href="https://af118ex02ol-dy1iqk2pjpov70.hop.clickbank.net" class="cta-button1">See Safer Option</a>
-    </p>
+<div class="cta-banner">
     © 2026 ConversionToolsHub.com | 
-     <a href="/privacy">Privacy Policy</a> |
+   <a href="/privacy">Privacy Policy</a> |
     <a href="/terms">Terms of Service</a>|
     <a href="/contact">Contact</a>
 </div>

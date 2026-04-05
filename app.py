@@ -243,8 +243,8 @@ def grams_vs_cups():
 def gramsvsoz():
     return render_template("grams-vs-ounce.html")
 
-@app.route("/grams-to-ounce", methods=["GET", "POST"])
-def weightConverter():
+@app.route("/grams-to-ounce/<string:subpage>", methods=["GET", "POST"])
+def weightConverter(subpage):
     result = None
     if request.method == "POST":
         temp = float(request.form["temp"])
@@ -271,7 +271,7 @@ def weightConverter():
         else:
             pass
 
-    return render_template("grams-to-ounce.html", result=result)
+    return render_template("grams-to-ounce.html", result=result, defselect=subpage)
 
 @app.route("/cooking-conversion-tools", methods=["GET", "POST"])
 def cookingConverter():

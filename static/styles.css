@@ -204,7 +204,12 @@ input, select, button {
   text-align: center;
  }
 
- .categories {
+.center_content ul {
+  display: inline-block; /* Makes UL shrink to fit content */
+  text-align: left; /* Keeps LI text left-aligned */
+}
+
+.categories {
    justify-content: center;
    align-items: center;
    text-align:center
@@ -231,6 +236,11 @@ input, select, button {
    text-align: justify;
 }
 
+.center_content2 ul {
+  display: inline-block; /* Makes UL shrink to fit content */
+  text-align: left; /* Keeps LI text left-aligned */
+}
+
 .tip-box {
   margin-top:25px; 
   padding:15px; 
@@ -238,6 +248,34 @@ input, select, button {
   background:#f9f9f9; 
   border-radius:6px; 
   font-family: Arial, sans-serif;
+}
+
+.article-section2 {
+    max-width: auto; 
+    margin: 10px; 
+    padding: 10px;
+    line-height: 1.6; 
+    font-family: Arial, sans-serif;
+    text-align: justify;
+}
+
+.article-section2 div {
+    text-align: center;
+}
+
+.article-section2 h2 {
+    text-align: center;
+}
+
+.article-section2 p {
+    text-align: center;
+}
+
+
+.justify-align {
+  text-align: justify;
+  padding:10px;
+  margin: 10px;
 }
 
 
@@ -303,7 +341,7 @@ input, select, button {
       flex-direction:inherit;
   }
 
-  .article-section div {
+  .article-section {
     max-width: auto; 
     margin: 10px auto; 
     line-height: 1.6; 
@@ -313,6 +351,33 @@ input, select, button {
 
   .article-section div p {
     text-align: justify;
+  }
+
+  .article-section2 {
+    max-width: auto; 
+    margin: 10px; 
+    padding: 10px;
+    line-height: 1.6; 
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+   .article-section2 div {
+    text-align: center;
+  }
+
+  .article-section2 h2 {
+    text-align: center;
+  }
+
+  .article-section2 p {
+    text-align: justify;
+  }
+
+  .justify-align {
+    text-align: justify;
+    padding:10px;
+    margin: 10px;
   }
 
 }

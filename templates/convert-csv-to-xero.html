@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volume and Weight Converters</title>
+    <meta name="description" content="Convert volume and weight like grams, ounce, pounds, cups and liters">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7887965262748356"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<style>
+h2 {
+  text-align: center;
+  padding-top:10px;
+  margin:0;
+  font-size: clamp(20px, 5vw, 20px);
+  color: red;
+}
+
+h3 {
+  text-align: center;
+  font-size: clamp(15px, 2vw, 15px);
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding:0px;
+}
+
+h4 {
+  text-align: center;
+  padding-top:10px;
+  margin:0;
+  font-size: clamp(18px, 2vw, 18px);
+}
+</style>
+</head>
+
+<body>
+  <div class="navbar">
+        <div class="logo">Conversion Tools Hub 🍳Convert CSV File to Xero Ready CSV</div>
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/blogs">Guides</a>
+            <a href="/tools">Tools</a>
+        </div>
+  </div>
+
+  <div class="container">
+    <div class="center_content">
+      <h2>Upload CSV to Convert</h2>
+      <div style = "border:2px solid #611c07;margin:5px;padding:10px">
+      <form style="text-align: center;" action="/convert-csv-to-xero-csv" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required />
+            <button type="submit">Convert to Xero CSV</button>
+        </form>
+      </div>
+    </div>
+    <div class="tip-box" style="margin-top:25px; padding:15px; border-left:4px solid #FF5722; background:#f9f9f9; border-radius:6px; font-family: Arial, sans-serif;">
+          <h3>Pro Tip: Converting CSV Files to Xero-Ready Format</h3>
+          <p>
+              When preparing financial data for Xero, not all CSV files are immediately compatible. Xero requires specific column headers, date formats, and numeric formatting to import successfully.
+          </p>
+          <p>
+              <strong>Tip:</strong> Before importing, always review your CSV to ensure that:
+          </p>
+          <ul>
+              <li>Columns match Xero's required template (e.g., Date, Description, Amount, Account Code)</li>
+              <li>Date formats are consistent (e.g., DD/MM/YYYY)</li>
+              <li>Numbers are properly formatted with decimal points and no extra characters</li>
+              <li>Any unnecessary columns are removed to avoid errors</li>
+          </ul>
+          <p>
+              Using a CSV conversion tool can save time by automatically restructuring your file into a Xero-ready format, reducing manual errors and streamlining your accounting workflow.
+          </p>
+      </div>
+
+    <div clss="center-content">
+      <h3>Disclaimer:</h3>
+      <p style="text-align:center;">Above is a standard csv Xero conversion at the time of writing. 
+        For more detailed conversions needed by your business contact us at:
+      </p>
+      <h3 style="font-size:25px;">admin@conversiontoolshub.com</h3>
+    </div>
+  </div>
+
+<div class="cta-banner">
+    © 2026 ConversionToolsHub.com | 
+   <a href="/privacy">Privacy Policy</a> |
+    <a href="/terms">Terms of Service</a>|
+    <a href="/contact">Contact</a>
+</div>
+
+</body>
+</html>

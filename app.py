@@ -4,10 +4,15 @@ from email.message import EmailMessage
 import os 
 from dotenv import load_dotenv
 
+from flask import Flask, request, send_file, render_template
+import pandas as pd
+from io import StringIO, BytesIO
+
+
 app = Flask(__name__)
 app.secret_key = "secretwapprender"  # required for flash messages
 
-
+# --- Conversion Functions ---
 def c_to_f(c):
     return (c * 9/5) + 32
 
@@ -51,6 +56,84 @@ def cooking_label(c):
         return "Moderate heat 🍳"
     else:
         return "High heat 🔥🔥"
+
+
+# --- CSV Transformation Logic ---
+def transform_csv(file_stream):
+    df = pd.read_csv(file_stream)
+
+    if df.empty:
+        raise ValueError("CSV is empty")
+
+    # Simple mapping (adjust to your needs)
+    df = df.rename(columns={
+        "Name": "contact_name",
+        "InvoiceDate": "invoice_date",
+        "DueDate": "due_date",
+        "Description": "description",
+        "Quantity": "quantity",
+        "UnitAmount": "unit_amount"
+    })
+
+    required = ["contact_name", "invoice_date", "due_date", "description", "quantity", "unit_amount"]
+    for col in required:
+        if col not in df.columns:
+            raise ValueError(f"Missing column: {col}")
+
+    # Normalize
+    df["invoice_date"] = pd.to_datetime(df["invoice_date"]).dt.strftime("%d/%m/%Y")
+    df["due_date"] = pd.to_datetime(df["due_date"]).dt.strftime("%d/%m/%Y")
+    df["quantity"] = df["quantity"].fillna(1).astype(float)
+    df["unit_amount"] = df["unit_amount"].astype(float).round(2)
+
+    df["account_code"] = "200"
+    df["tax_type"] = "GST on Income"
+    df["currency"] = "NZD"
+    df["invoice_number"] = [f"INV-{i+1:04d}" for i in range(len(df))]
+
+    # Xero format
+    output = pd.DataFrame()
+    output["ContactName"] = df["contact_name"]
+    output["EmailAddress"] = ""
+    output["InvoiceNumber"] = df["invoice_number"]
+    output["InvoiceDate"] = df["invoice_date"]
+    output["DueDate"] = df["due_date"]
+    output["Description"] = df["description"]
+    output["Quantity"] = df["quantity"]
+    output["UnitAmount"] = df["unit_amount"]
+    output["AccountCode"] = df["account_code"]
+    output["TaxType"] = df["tax_type"]
+    output["Reference"] = ""
+    output["Currency"] = df["currency"]
+    return output
+
+@app.route("/convert-csv-to-xero")
+def convertcsv():
+    return render_template("convert-csv-to-xero.html")
+
+@app.route("/convert-csv-to-xero-csv", methods=["POST"])
+def converttoxero():
+    if "file" not in request.files:
+        return "No file uploaded", 400
+
+    file = request.files["file"]
+
+    try:
+        df = transform_csv(file)
+    except Exception as e:
+        return str(e), 400
+
+    # Convert DataFrame to CSV in memory
+    buffer = StringIO()
+    df.to_csv(buffer, index=False)
+    buffer.seek(0)
+
+    return send_file(
+        BytesIO(buffer.getvalue().encode()),
+        mimetype="text/csv",
+        as_attachment=True,
+        download_name="converted.csv"
+    )
 
 @app.route("/180c-to-fahrenheit")
 def page_180():

@@ -163,8 +163,6 @@ input, select, button {
 
 /* Form layout */
 .justify_left {
-  display: flex;
-  flex-wrap: wrap; /* KEY FIX */
   text-align: left;
   margin: 0px;
   padding: 0px;
@@ -178,6 +176,14 @@ input, select, button {
   text-align: justify;
 }
 
+
+.center_content {
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  margin-top: 10px;
+  text-align: center;
+ }
 
 /* 🔥 MOBILE FIX */
 @media (max-width: 600px) {

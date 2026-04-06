@@ -14,9 +14,12 @@
     font-size: clamp(20px, 5vw, 20px);
     color: red;
   }
+  .center_content p {
+    text-align: center;
+  }
 </style>
 </head>
-<body class="container">
+<body>
   <div class="navbar">
     <div class="logo">Conversion Tools Hub 🍳Contact Us</div>
     <div class="menu">
@@ -26,41 +29,41 @@
     </div>
   </div>
 
-   <h1>Contact Us</h1>
-   <h3>Send us an email at admin@conversiontoolshub.com</h3>
+  <div class="container">
    <div class="center_content">
-    <div class="justify_left">
-      <p>We aim to respond between 24 - 48 hours.</p>
-      <p>For business partnerships, please include details about your request.</p>
-    </div>
+    <h1>Contact Us</h1>
+    <h3>Send us an email at admin@conversiontoolshub.com</h3>
+    <p>We aim to respond between 24 - 48 hours.</p>
+    <p>For business partnerships, please include details about your request.</p>
    </div>
-      <div class="center_content">
-      {% if runenv == "local" %} 
-          {{ runenv }}
-        <form action="/send-message" method="POST">
-        <p><label>Name</label>
-        <input type="text" name="name" required>
-        </p>
-        <p><label>Email</label>
-        <input type="email" name="email" required>
-        </p>
-        <p>
-        <label>Message</label>
-        <textarea name="message" rows="5" required></textarea>
-        </p>
-        <p><button type="submit">Send Message</button></p>        
-        {% if label %}
-            <p>{{ label }}</p>
-        {% endif %}
-    </form> 
-    {% endif %}
+   <div class="center_content">
+        {% if runenv == "local" %} 
+            {{ runenv }}
+          <form action="/send-message" method="POST">
+          <p><label>Name</label>
+          <input type="text" name="name" required>
+          </p>
+          <p><label>Email</label>
+          <input type="email" name="email" required>
+          </p>
+          <p>
+          <label>Message</label>
+          <textarea name="message" rows="5" required></textarea>
+          </p>
+          <p><button type="submit">Send Message</button></p>        
+          {% if label %}
+              <p>{{ label }}</p>
+          {% endif %}
+      </form> 
+      {% endif %}
+    </div>
   </div>
     <hr>
-    <div class="container_bottom">
+  <div class="container_bottom">
     <h2 style="text-align: center;">Tip for better cooking: </h2>
-    <p style="text-align: center;">Use a reliable thermometer to ensure your oven is accurate.</p>
-    <p style="text-align: center;"><a href="https://f6630a7vsml-mvfwgtdvfu0x6h.hop.clickbank.net" target="_blank" rel="nofollow sponsored">Check out this 500 Dessert Recipe Cookbook</a></p>
-
+    <p style="text-align: center;">Use a reliable conversion tool to ensure your oven temperature is accurate.</p>
+    <p style="text-align: center;">check out our <a href="/">temperature converter</a></p>
+   </div>
     <div class="cta-banner">
        © 2026 ConversionToolsHub.com | 
        <a href="/privacy">Privacy Policy</a>|     

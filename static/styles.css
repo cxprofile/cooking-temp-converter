@@ -179,7 +179,7 @@ input, select, button {
 }
 /* Form layout */
 .justify_left {
-  text-align: left;
+  text-align: justify;
   margin: 0px;
   padding: 0px;
 }
@@ -230,6 +230,16 @@ input, select, button {
 .center_content2 p {
    text-align: justify;
 }
+
+.tip-box {
+  margin-top:25px; 
+  padding:15px; 
+  border-left:4px solid #9C27B0;
+  background:#f9f9f9; 
+  border-radius:6px; 
+  font-family: Arial, sans-serif;
+}
+
 
 /* 🔥 MOBILE FIX */
 @media (max-width: 600px) {

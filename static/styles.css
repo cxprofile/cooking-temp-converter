@@ -14,6 +14,7 @@ body {
   max-width: auto;
 }
 
+
 .container p {
   text-align: justify;
 }
@@ -197,6 +198,20 @@ input, select, button {
   min-height: 80px;
   margin-top: 10px;
   text-align: center;
+ }
+
+ .center_content p {
+  text-align: center;
+ }
+
+ .categories {
+   justify-content: center;
+   align-items: center;
+   text-align:center
+ }
+
+ .categories p {
+   text-align: center;
  }
 
  .center_content2{

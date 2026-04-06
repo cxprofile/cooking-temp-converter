@@ -43,12 +43,16 @@
       <form method="POST">
       <input type="number" step="0.00001" name="temp" placeholder="Enter Unit" required>
       <select name="conversion">
-        <option value="g_to_kg">Grams → Kg</option>
-        <option value="kg_to_g">Kg → Grams</option>
         <option value="g_to_lbs">Grams → Pounds</option>
         <option value="lbs_to_g">Pounds → Grams</option>
         <option value="kg_to_lbs">Kg → Pounds</option>
         <option value="lbs_to_kg">Pounds → Kg</option>
+         {% if defselect == "grams-to-kg" %}
+          <option value="g_to_kg" selected>Grams → Kg</option>
+        {% else %}
+          <option value="g_to_kg">Grams → Kg</option>
+        {% endif %}
+        <option value="kg_to_g">Kg → Grams</option>
       </select>
     <button type="submit">Convert</button>
       </form>

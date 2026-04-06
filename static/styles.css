@@ -14,6 +14,10 @@ body {
   max-width: auto;
 }
 
+.container p {
+  text-align: justify;
+}
+
 /* Titles */
 h1 {
   text-align: center;
@@ -155,12 +159,23 @@ input, select, button {
 }
 
 .article-section {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.6;
-    font-family: Arial, sans-serif;
+  max-width: auto; 
+  margin: 10px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
 }
 
+.article-section div {
+  max-width: auto; 
+  margin: 10px auto; 
+  line-height: 1.6; 
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.article-section p {
+  text-align: justify;
+}
 /* Form layout */
 .justify_left {
   text-align: left;
@@ -171,11 +186,10 @@ input, select, button {
 .justify_left p {
   margin: 8px;
   padding-top: 5px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: justify;
 }
-
 
 .center_content {
   justify-content: center;
@@ -184,6 +198,23 @@ input, select, button {
   margin-top: 10px;
   text-align: center;
  }
+
+ .center_content2{
+  max-width: auto;
+  alignment-baseline: central;
+  padding-top:0px;
+  margin-top:8px;
+  justify-content: center;
+ }
+
+ .center_content2 div {
+   border-style: solid 2px rgb(111, 5, 5);
+ }
+
+ 
+.center_content2 p {
+   text-align: justify;
+}
 
 /* 🔥 MOBILE FIX */
 @media (max-width: 600px) {
@@ -221,6 +252,10 @@ input, select, button {
     margin-bottom:0px;
   }
 
+  .container p {
+    text-align: justify;
+  }
+
   .container_bottom {
     max-width: auto;
     padding-top:0;
@@ -241,6 +276,18 @@ input, select, button {
       text-align: center;
       height:auto;
       flex-direction:inherit;
+  }
+
+  .article-section div {
+    max-width: auto; 
+    margin: 10px auto; 
+    line-height: 1.6; 
+    font-family: Arial, sans-serif;
+    text-align: justify;
+  }
+
+  .article-section div p {
+    text-align: justify;
   }
 
 }

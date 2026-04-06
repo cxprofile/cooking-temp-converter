@@ -19,6 +19,20 @@
     <title>Conversion Tools Hub - Free Online Converters for Everyday Use</title>
     <meta name="description" content="Free online conversion tools for cooking, temperature, weight, and more. Accurate, fast, and easy-to-use calculators with helpful guides.">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<style>
+    .container {
+        text-align: center;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+
+    .center_result ul li {
+        text-align: left;
+    }
+
+</style>
 </head>
 
 <body>
@@ -46,7 +60,7 @@
             so you can understand your results — not just calculate them.
         </p>
 
-        <!-- 🔥 FEATURED TOOL SECTION -->
+        <!-- FEATURED TOOL SECTION -->
         <h2>🔥 Popular Tool: Cooking Temperature Converter</h2>
 
         <p>
@@ -54,7 +68,7 @@
             Use this quick tool to get accurate cooking temperatures instantly.
         </p>
 
-        <!-- 🔧 YOUR EXISTING CONVERTER HERE -->
+        <!-- YOUR EXISTING CONVERTER HERE -->
         <div class="tool-container">
             <form method="POST">
 
@@ -78,7 +92,7 @@
                 </div>
                 <div style="text-align:center;margin-top:10px;margin-bottom:0px;">
                     <h3 style="color:red">Pro Tip for better cooking: </h3>
-                    <p>Use a reliable thermometer to ensure your oven is accurate.</p>
+                    <p stye="text-align:center;">Use a reliable thermometer to ensure your oven is accurate.</p>
                     <strong>Other Conversion Tools (<a href="/cooking-conversion-tools">Cooking</a>, <a href="/tools">Business)</a></strong>
                 </div>
             </form>
@@ -130,7 +144,7 @@
             </p>
             <a href="/grams-to-ounce/weight-converter">Weight Converter →</a>
 
-            <h3>📏 Volume Conversions</h3>
+            <h3>⚖️ Volume Conversions</h3>
             <p>
                 Convert liters, milliliters, cups, and more for cooking and everyday use.
             </p>
@@ -138,60 +152,62 @@
 
         </div>
 
-        <h2>Real-Life Examples</h2>
+        <div class="center_content2">
+           <div class="article-section">
+                <h2 style="font-size:18px;">Real-Life Examples</h2>
+                <ul style="text-align:justify;padding-top:0px;margin-top:8px;">
+                    <li style="list-style-position: left;">180°C = 356°F - a common baking temperature</li>
+                    <li style="list-style-position: left;">1 cup = 240 ml (US standard)</li>
+                    <li style="list-style-position: left;">1 tablespoon = 15 ml</li>
+                </ul>
+                <p style="text-align: center;">
+                    These everyday conversions are essential when following recipes or switching between measurement systems.
+                </p>
+            
+                <h2 style="font-size:18px;">Tips for Using Conversion Tools</h2>
+                <ul style="text-align:justify;padding-top:0px;margin-top:8px;">
+                <li style="list-style-position: left;">Always double-check units before converting</li>
+                <li style="list-style-position: left;">Use precise measurements for baking</li>
+                <li style="list-style-position: left;">Be aware of regional differences (US vs UK)</li>
+                <li style="list-style-position: left;">Bookmark frequently used tools for quick access</li>
+                </ul>
+            </div>
+ 
+            <h2>Frequently Asked Questions</h2>
 
-        <ul>
-            <li>180°C = 356°F — a common baking temperature</li>
-            <li>1 cup = 240 ml (US standard)</li>
-            <li>1 tablespoon = 15 ml</li>
-        </ul>
+            <h3>Are these conversion tools accurate?</h3>
+            <p>
+                Yes, all tools are based on standard conversion formulas to ensure reliable results.
+            </p>
 
-        <p>
-            These everyday conversions are essential when following recipes or switching between measurement systems.
-        </p>
+            <h3>Can I use these tools for baking?</h3>
+            <p>
+                Absolutely. These tools are especially useful for baking, where precise measurements are critical.
+            </p>
 
-        <h2>Tips for Using Conversion Tools</h2>
+            <h3>Do measurements differ between countries?</h3>
+            <p>
+                Yes. For example, US and UK measurements can vary, so conversions are often necessary.
+            </p>
 
-        <ul>
-            <li>Always double-check units before converting</li>
-            <li>Use precise measurements for baking</li>
-            <li>Be aware of regional differences (US vs UK)</li>
-            <li>Bookmark frequently used tools for quick access</li>
-        </ul>
+            <h2>About Conversion Tools Hub</h2>
 
-        <h2>Frequently Asked Questions</h2>
+            <p>
+                Conversion Tools Hub was created to simplify everyday calculations. Instead of searching multiple sites, 
+                you can find all the tools you need in one place - fast, accurate, and easy to use.
+            </p>
+            <p>
+                We also offer free kitchen cleaning advises and cooking advises where unit and measurement conversions are appropriate. Check out our articles and blog posts.
+            </p>
+            <p>
+                We continue to improve and expand our tools to make them more helpful and user-friendly.
+            </p>
+        </div>
 
-        <h3>Are these conversion tools accurate?</h3>
-        <p>
-            Yes, all tools are based on standard conversion formulas to ensure reliable results.
-        </p>
-
-        <h3>Can I use these tools for baking?</h3>
-        <p>
-            Absolutely. These tools are especially useful for baking, where precise measurements are critical.
-        </p>
-
-        <h3>Do measurements differ between countries?</h3>
-        <p>
-            Yes. For example, US and UK measurements can vary, so conversions are often necessary.
-        </p>
-
-        <h2>About Conversion Tools Hub</h2>
-
-        <p>
-            Conversion Tools Hub was created to simplify everyday calculations. Instead of searching multiple sites, 
-            you can find all the tools you need in one place — fast, accurate, and easy to use.
-        </p>
-        <p>
-            We also offer free kitchen cleaning advises and cooking advises where unit and measurement conversions are appropriate. Check out our articles and blog posts.
-        </p>
-        <p>
-            We continue to improve and expand our tools to make them more helpful and user-friendly.
-        </p>
 
         <hr>
         
-        <div class="article-section" style="max-width: 800px; margin: 40px auto; line-height: 1.6; font-family: Arial, sans-serif;">
+        <div class="article-section">
             <h4><a href="/cooking-measurement-tips">Learn more about cooking measurements</a></h4>
             <div class="center_result">
                 <ul style="text-align:left;padding-top:0px;margin-top:8px;">
@@ -201,65 +217,67 @@
                 </ul>
             </div>
             
-            <h2>Essential Kitchen Tips for Accurate Cooking and Food Safety</h2>
-            <p>
-            Accurate measurements and proper kitchen hygiene go hand in hand. 
-            While conversion tools help you get the right quantities, safe food preparation practices 
-            ensure your meals are both successful and safe to eat.
-            </p>
-            <p>Do you know that one of the common items that bacteria can thrive in your kitchen is your cutting board? check out our article below as to why this might be so.</p>
-            <h2 style="color: hsl(350, 75%, 47%);">Your cutting board could be harboring bacteria.</h2>
-            <h2>Why Cutting Boards May Be Harboring Bacteria (and How to Keep Them Safe)</h2>
+            <div style="text-align: justify;">
+                <h2>Essential Kitchen Tips for Accurate Cooking and Food Safety</h2>
+                <p>
+                Accurate measurements and proper kitchen hygiene go hand in hand. 
+                While conversion tools help you get the right quantities, safe food preparation practices 
+                ensure your meals are both successful and safe to eat.
+                </p>
+                <p>Do you know that one of the common items that bacteria can thrive in your kitchen is your cutting board? check out our article below as to why this might be so.</p>
+                <h2 style="color: hsl(350, 75%, 47%);">Your cutting board could be harboring bacteria.</h2>
+                <h2>Why Cutting Boards May Be Harboring Bacteria (and How to Keep Them Safe)</h2>
 
-            <p>
-                Cutting boards are one of the most frequently used tools in any kitchen, but they can also be one of the most overlooked sources of bacteria. 
-                Every time you chop vegetables, slice meat, or prepare ingredients, your cutting board comes into contact with food particles and moisture — 
-                creating the perfect environment for bacteria to grow.
-            </p>
+                <p>
+                    Cutting boards are one of the most frequently used tools in any kitchen, but they can also be one of the most overlooked sources of bacteria. 
+                    Every time you chop vegetables, slice meat, or prepare ingredients, your cutting board comes into contact with food particles and moisture - 
+                    creating the perfect environment for bacteria to grow.
+                </p>
 
-            <h3>Why Cutting Boards Can Become Unsafe</h3>
+                <h3>Why Cutting Boards Can Become Unsafe</h3>
 
-            <p>
-                Bacteria such as <em>Salmonella</em> and <em>E. coli</em> can easily transfer from raw foods, especially meat, poultry, and seafood, onto the surface 
-                of your cutting board. If the board is not properly cleaned, these bacteria can spread to other foods, increasing the risk of foodborne illness.
-            </p>
+                <p>
+                    Bacteria such as <em>Salmonella</em> and <em>E. coli</em> can easily transfer from raw foods, especially meat, poultry, and seafood, onto the surface 
+                    of your cutting board. If the board is not properly cleaned, these bacteria can spread to other foods, increasing the risk of foodborne illness.
+                </p>
 
-            <p>
-                Even small knife grooves on the surface can trap food residue and moisture, making it difficult to fully remove contaminants during quick rinses.
-            </p>
+                <p>
+                    Even small knife grooves on the surface can trap food residue and moisture, making it difficult to fully remove contaminants during quick rinses.
+                </p>
 
-            <h3>Wooden vs Plastic Cutting Boards</h3>
+                <h3>Wooden vs Plastic Cutting Boards</h3>
 
-            <ul>
-                <li><strong>Wooden boards</strong> are porous and can absorb bacteria, but they may also trap and reduce some microbes over time.</li>
-                <li><strong>Plastic boards</strong> are non-porous and easier to sanitize, but deep cuts can still harbor bacteria if not cleaned thoroughly.</li>
-            </ul>
+                <ul>
+                    <li><strong>Wooden boards</strong> are porous and can absorb bacteria, but they may also trap and reduce some microbes over time.</li>
+                    <li><strong>Plastic boards</strong> are non-porous and easier to sanitize, but deep cuts can still harbor bacteria if not cleaned thoroughly.</li>
+                </ul>
 
-            <p>
-                The key factor is not just the material, but how well the board is maintained.
-            </p>
+                <p>
+                    The key factor is not just the material, but how well the board is maintained.
+                </p>
 
-            <h3>How to Reduce Bacteria on Cutting Boards</h3>
+                <h3>How to Reduce Bacteria on Cutting Boards</h3>
 
-            <ul>
-                <li>Wash your cutting board with hot, soapy water immediately after use</li>
-                <li>Use separate boards for raw meat and vegetables</li>
-                <li>Sanitize regularly with a mild bleach solution or vinegar</li>
-                <li>Let the board dry completely before storing</li>
-                <li>Replace boards that have deep grooves or cracks</li>
-            </ul>
+                <ul>
+                    <li>Wash your cutting board with hot, soapy water immediately after use</li>
+                    <li>Use separate boards for raw meat and vegetables</li>
+                    <li>Sanitize regularly with a mild bleach solution or vinegar</li>
+                    <li>Let the board dry completely before storing</li>
+                    <li>Replace boards that have deep grooves or cracks</li>
+                </ul>
 
-            <h3>Why It Matters</h3>
+                <h3>Why It Matters</h3>
 
-            <p>
-                Cross-contamination is one of the most common causes of kitchen-related illness. A poorly cleaned cutting board can transfer bacteria 
-                from raw meat to ready-to-eat foods like fruits or salads.
-            </p>
+                <p>
+                    Cross-contamination is one of the most common causes of kitchen-related illness. A poorly cleaned cutting board can transfer bacteria 
+                    from raw meat to ready-to-eat foods like fruits or salads.
+                </p>
 
-            <p>
-                Taking a few extra minutes to clean and care for your cutting board can make a big difference — not just for food quality, but for your health.
-            </p>
-            <div style="margin-top:30px; padding:15px; border:1px solid green; border-radius:8px;">
+                <p>
+                    Taking a few extra minutes to clean and care for your cutting board can make a big difference - not just for food quality, but for your health.
+                </p>
+            </div>
+            <div style="margin-top:30px; padding:15px; border:2px solid rgb(153, 5, 5); border-radius:8px;">
                 <h3>Helpful Recommendation</h3>
                 <p>
                     If you're concerned about bacteria on cutting boards, using a high-quality, easy-to-clean board can make a big difference.

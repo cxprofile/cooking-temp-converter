@@ -255,8 +255,8 @@ input, select, button {
 
 .article-section2 {
     max-width: auto; 
-    margin: 10px; 
-    padding: 10px;
+    margin: 5px; 
+    padding: 5px;
     line-height: 1.6; 
     font-family: Arial, sans-serif;
     text-align: justify;
@@ -506,8 +506,8 @@ input, select, button {
 
   .article-section2 {
     max-width: auto; 
-    margin: 10px; 
-    padding: 10px;
+    margin: 5px; 
+    padding: 5px;
     line-height: 1.6; 
     font-family: Arial, sans-serif;
     text-align: center;
@@ -527,8 +527,8 @@ input, select, button {
 
   .justify-align {
     text-align: justify;
-    padding:10px;
-    margin: 10px;
+    padding:5px;
+    margin: 5px;
   }
 
 }

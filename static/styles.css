@@ -209,6 +209,9 @@ input, select, button {
   text-align: left; /* Keeps LI text left-aligned */
 }
 
+.center_content li {
+  text-align:left;
+}
 .categories {
    justify-content: center;
    align-items: center;

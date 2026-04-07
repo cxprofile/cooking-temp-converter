@@ -383,8 +383,8 @@ def weightConverter(subpage):
 
     return render_template("grams-to-ounce.html", result=result, defselect=subpage)
 
-@app.route("/cooking-conversion-tools", methods=["GET", "POST"])
-def cookingConverter():
+@app.route("/cooking-converters/<string:subpage2>", methods=["GET", "POST"])
+def cookingConverter(subpage2):
     #return render_template("cooking-converters.html")
     result = None
     if request.method == "POST":
@@ -412,7 +412,7 @@ def cookingConverter():
         else:
             pass
 
-    return render_template("cooking-converters.html", result=result)
+    return render_template("cooking-converters.html", result=result, defselect=subpage2)
 
 
 @app.route("/", methods=["GET", "POST"])

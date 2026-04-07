@@ -27,7 +27,7 @@ h1 {
 
 h3 {
   text-align: center;
-  font-size: clamp(15px, 2vw, 15px);
+  font-size: clamp(18px, 2vw, 18px);
 }
 
 h4 {
@@ -74,8 +74,8 @@ input, select, button {
   text-align: center;
 }
 
-/* CTA Banner */
-.cta-banner {
+/* Footer */
+.footer {
   bottom: 0;
   width: 100%;
   background: #111;
@@ -86,7 +86,7 @@ input, select, button {
   text-align: center;
 }
 
-.cta-banner a {
+.footer a {
   color:#fff;
 } 
 
@@ -271,13 +271,161 @@ input, select, button {
     text-align: center;
 }
 
-
 .justify-align {
   text-align: justify;
   padding:10px;
   margin: 10px;
 }
 
+.align-center {
+  text-align:center;
+}
+
+.align-center h1 {
+  text-align:center;
+}
+
+.align-center p {
+  text-align:center;
+}
+
+.align-center ul {
+    text-align:center; 
+    list-style:none; 
+    padding:0;
+}
+
+.align-center-30 {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+}
+
+.align-center-20 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.align-center-25 {
+ text-align:center;
+ font-size:25px;
+ color:black;
+}
+
+.align-left {
+  text-align:left;
+}
+.code-block {
+  background:#f4f4f4; 
+  padding:10px; 
+  border-radius:6px;
+
+}
+
+.red-color {
+  color:red;
+}
+
+.red-color h3 {
+  color:red;
+}
+
+.reddish-color {
+  color: hsl(350, 75%, 47%);
+}
+
+.reddish-color h3 {
+  color: hsl(350, 75%, 47%);
+}
+
+.font-size-20 {
+  font-size:20px;
+}
+
+.font-size-25 {
+  font-size:25px;
+}
+
+.pro-tip-box {
+  text-align:center;
+  margin:10px; padding:10px; 
+  border:2px solid  hsl(350, 75%, 47%); /*rgb(153, 5, 5); */
+  border-radius:8px;
+}
+
+.tip-box {
+ margin-top:25px; 
+ padding:15px; border-left:4px solid #FF5722; 
+ background:#f9f9f9; 
+ border-radius:6px; 
+ font-family: Arial, sans-serif;
+}
+
+.ul-tips-box {
+  text-align:left;
+  padding-top:0px;
+  margin-top:8px;
+}
+
+.ul-tips-box li {
+  padding-bottom:5px;
+}
+
+.ul-list-justify {
+  text-align:justify;
+  padding-top:0px;
+  margin-top:8px;
+}
+
+.ul-list-justify li {
+   list-style-position: left;
+}
+
+.ul-list-center {
+  text-align:center; 
+  padding:2px;
+  margin:2px;
+}
+
+.ul-list-center-none {
+  text-align:center; 
+  padding:2px;
+  margin:2px;
+  list-style: none;
+}
+
+.ul-list-center-none li {
+ list-style-type: none;
+}
+
+.zero-padding {
+  padding:0;
+  margin:0;
+}
+
+.recipe-section {
+   max-width: 800px; 
+   margin: 40px auto; 
+   font-family: Arial, sans-serif; 
+   line-height: 1.6;
+   color: black;
+}
+
+.recipe-box {
+  margin-top:20px; 
+  padding:15px; 
+  border:1px solid #210101ec; 
+  border-radius:8px;   
+}
+
+.maroon-box-center {
+  text-align:center; 
+  padding: 10px;
+  margin: 10px;
+  border-width:2px; 
+  border-color: rgb(122, 7, 7); 
+  border-style: solid;
+}
 
 /* 🔥 MOBILE FIX */
 @media (max-width: 600px) {
@@ -306,7 +454,7 @@ input, select, button {
   }
 
   body {
-    padding-bottom: 20px; /* prevent banner overlap */
+    padding-bottom: 20px; /* prevent footer overlap */
   }
   
   .container {
@@ -327,7 +475,7 @@ input, select, button {
     margin-bottom:0px;
   }
 
-  .cta-banner {
+  .footer {
     max-width: 600px;
     min-height:50px;
     text-align: center;

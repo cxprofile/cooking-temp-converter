@@ -13,8 +13,6 @@
     <title>Grams to Ounce</title>
     <meta name="description" content="Convert volume and weight like grams, ounce, pounds, cups and liters">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7887965262748356"
-     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <style>
 h2 {
@@ -39,6 +37,17 @@ h4 {
   margin:0;
   font-size: clamp(18px, 2vw, 18px);
 }
+
+.h3-padding2px {
+  margin-top:2px;
+  padding-top:2px;
+}
+
+.h3-padding10px{
+  margin-bottom:0px;
+  padding-bottom: 10px;
+}
+
 </style>
 </head>
 
@@ -85,19 +94,19 @@ h4 {
     </div>
     <h4><a href="/cooking-measurement-tips">Learn more about cooking measurements</a></h4>
     <div class="center_result">
-      <ul style="text-align:left;padding-top:0px;margin-top:8px;">
-        <li style="padding-bottom:5px"><a href="/grams-vs-ounce">When to use grams vs ounces</a></li>
-        <li  style="padding-bottom:5px"><a href="/cooking-measurement-tips">Why Accurate Measurements Matter</a></li>
-        <li  style="padding-bottom:0px"><a href="/grams-vs-cups">Grams vs Cups Explained</a></li>
+      <ul class="ul-list-justify">
+        <li><a href="/grams-vs-ounce">When to use grams vs ounces</a></li>
+        <li><a href="/cooking-measurement-tips">Why Accurate Measurements Matter</a></li>
+        <li><a href="/grams-vs-cups">Grams vs Cups Explained</a></li>
       </ul>
     </div>
-    <h3 style="margin-bottom:0px;padding-bottom: 10px;"><a href="/cooking-converters/grams-to-pounds"">Cooking Unit Converters (g, kg, lbs)</a></h3>     <div class="center_result1">
-    <h3 style="margin-top:2px;padding-top:2px">Other Conversion Tools (<a href="/">Temperature</a>, <a href="/tools">Business)</a></h3>
+    <h3 class="h3-padding10px"><a href="/cooking-converters/grams-to-pounds"">Cooking Unit Converters (g, kg, lbs)</a></h3>     <div class="center_result1">
+    <h3 class="h3-padding2px">Other Conversion Tools (<a href="/">Temperature</a>, <a href="/tools">Business)</a></h3>
   </div>
 </div>
 {% if defselect == "weight-converter" %}
 <div class="tip-box">
-    <h3 style="font-size:28px;">Using Grams to Ounces Conversion in Cooking</h3>
+    <h3 class="font-size-25">Using Grams to Ounces Conversion in Cooking</h3>
     <p>
         Converting grams to ounces is useful when following recipes from different regions, especially when switching between metric and US measurements.
     </p>
@@ -117,7 +126,7 @@ h4 {
 <hr>
 {% else %}
 <div class="tip-box">
-    <h3 style="font-size:28px;">Pro Tip: Converting Cups to mL in Cooking</h3>
+    <h3 class="font-size-25">Pro Tip: Converting Cups to mL in Cooking</h3>
     <p>
         Converting cups to milliliters (mL) is essential when following recipes from different countries, especially between US and metric systems.
     </p>
@@ -133,14 +142,14 @@ h4 {
 </div>
 {% endif %}
 <div class="container_bottom"></div>
-    <h2 style="text-align: center;">Pro Tip for better cooking: </h2>
+    <h2 class="align-center">Pro Tip for better cooking: </h2>
 {% if defselect == "weight-converter" %}
-    <p style="text-align: center;">
+    <p class="align-center">
         <strong>Tip:</strong> Use grams whenever possible for precise measurements, and use ounces for convenience when exact accuracy is less critical. 
         Always double-check conversions when working with sensitive recipes like cakes or pastries.
     </p>
 {% else %}
-  <p style="text-align: center;"></p>
+  <p class="align-center">
         <strong>Tip:</strong> Use milliliters for liquids whenever possible, as they provide more precise and consistent measurements. 
         This is especially helpful for recipes that require accuracy, such as baking or sauces.
     </p>
@@ -149,12 +158,12 @@ h4 {
 
 
 
-<div class="cta-banner">
+<footer class="footer">
     © 2026 ConversionToolsHub.com | 
    <a href="/privacy">Privacy Policy</a> |
     <a href="/terms">Terms of Service</a>|
     <a href="/contact">Contact</a>
-</div>
+</footer>
 
 </body>
 </html>
